@@ -1,0 +1,12 @@
+services:
+  - type: worker
+    name: mx-ai-auto-trader
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    plan: starter
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: TWELVE_DATA_API_KEY
+        sync: false
